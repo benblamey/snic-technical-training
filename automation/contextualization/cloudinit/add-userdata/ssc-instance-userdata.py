@@ -26,7 +26,7 @@ auth = loader.load_from_options(auth_url=env['OS_AUTH_URL'],
 
 sess = session.Session(auth=auth)
 nova = client.Client('2.1', session=sess)
-print "user authorization completed."
+print("user authorization completed.")
 
 image = nova.glance.find_image(image_name)
 
@@ -48,16 +48,16 @@ else:
 
 secgroups = ['default']
 
-print "Creating instance ... "
+print("Creating instance ... ")
 instance = nova.servers.create(name="vm1", image=image, flavor=flavor, userdata=userdata, nics=nics,security_groups=secgroups)
 inst_status = instance.status
-print "waiting for 10 seconds.. "
+print("waiting for 10 seconds.. ")
 time.sleep(10)
 
 while inst_status == 'BUILD':
-    print "Instance: "+instance.name+" is in "+inst_status+" state, sleeping for 5 seconds more..."
+    print("Instance: "+instance.name+" is in "+inst_status+" state, sleeping for 5 seconds more...")
     time.sleep(5)
     instance = nova.servers.get(instance.id)
     inst_status = instance.status
 
-print "Instance: "+ instance.name +" is in " + inst_status + "state"
+print("Instance: "+ instance.name +" is in " + inst_status + "state")
