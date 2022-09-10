@@ -16,13 +16,11 @@ write_files:
       app = Flask(__name__)
       @app.route('/cowsay/api/v1.0/saysomething', methods=['GET'])
       def cow_say():
-          data=subprocess.check_output(["cowsay","Hello student"])
+          data=subprocess.check_output(["/usr/games/cowsay","ACC 2022!"])
           return data
       if __name__ == '__main__':
           app.run(host='0.0.0.0',debug=True)
 
 runcmd:
- - echo "export PATH=$PATH:/usr/games" >> /home/ubuntu/.bashrc  
- - source /home/ubuntu/.bashrc
  - pip3 install Flask
  - python3 /home/ubuntu/cowsay-app.py & 
