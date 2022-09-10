@@ -101,7 +101,6 @@ resources:
         #!/bin/sh
         echo "Hello, World!"
         echo "<ADD-CLUSTER’s-PUBLIC-KEY>" >> /home/ubuntu/.ssh/authorized_keys
-        apt-add-repository -y ppa:ansible/ansible
         apt-get update -y
         apt-get upgrade -y
         apt-get install -y ansible
