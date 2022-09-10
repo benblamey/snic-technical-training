@@ -2,13 +2,10 @@
 
 apt_update: true
 apt_upgrade: true
+
 packages:
+ - python3-pip
  - cowsay
- - python-pip
- - python-dev
- - build-essential
- - cowsay
-byobu_default: system 
 
 write_files:
   - path: /home/ubuntu/cowsay-app.py
@@ -27,5 +24,5 @@ write_files:
 runcmd:
  - echo "export PATH=$PATH:/usr/games" >> /home/ubuntu/.bashrc  
  - source /home/ubuntu/.bashrc
- - pip install Flask
- - python /home/ubuntu/cowsay-app.py & 
+ - pip3 install Flask
+ - python3 /home/ubuntu/cowsay-app.py & 
