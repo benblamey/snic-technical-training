@@ -8,7 +8,7 @@ import keystoneclient.v3.client as ksclient
 from keystoneauth1 import loading
 from keystoneauth1 import session
 
-# TODO: these need to be fixed for the script to work!
+# TODO: some these need to be filled in for the script to work...
 flavor = "ACCHT18.normal" 
 private_net = None
 floating_ip_pool_name = None
