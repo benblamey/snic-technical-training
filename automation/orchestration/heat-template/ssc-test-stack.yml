@@ -16,13 +16,13 @@ parameters:
     type: string
     label: Image name or ID
     description: Image to be used for compute instance
-    default: 40e1794e-6471-4c9b-9327-2b762ca0c135
+    default: 98c10a7f-2587-450b-866c-1266ea0dbe4b
 
   flavor:
     type: string
     label: Flavor
     description: Type of instance (flavor) to be used
-    default: ACCHT18.normal
+    default: ssc.small
 
   key:
     type: string
