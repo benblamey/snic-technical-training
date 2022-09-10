@@ -1,13 +1,13 @@
-FROM ubuntu
-RUN apt-get update
-RUN apt-get -y upgrade 
-RUN apt-get install -y git 
-RUN apt-get install -y python-pip
-RUN pip install --upgrade pip
-RUN pip install flask
-RUN apt-get install -y cowsay
+FROM ubuntu:22.04
+RUN apt update
+RUN apt -y upgrade 
+RUN apt install -y git 
+RUN apt install -y python3-pip
+RUN pip3 install --upgrade pip
+RUN pip3 install flask
+RUN apt install -y cowsay
 RUN git clone https://github.com/TDB-UU/csaas.git 
 WORKDIR /csaas/cowsay
 EXPOSE 5000
 ENV PATH="${PATH}:/usr/games/"
-CMD ["python","app.py"]
+CMD ["python3","app.py"]
